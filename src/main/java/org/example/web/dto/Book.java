@@ -1,9 +1,16 @@
 package org.example.web.dto;
 
+import javax.validation.constraints.*;
+
 public class Book {
     private Integer id;
+    @NotEmpty(message = "author is empty")
     private String author;
+    @NotEmpty(message = "title is empty")
     private String title;
+
+    @NotNull(message = "size too small")
+    @Max(value = 1000, message = "size too large")
     private Integer size;
 
     public Integer getId() {

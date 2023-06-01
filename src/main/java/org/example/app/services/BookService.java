@@ -27,4 +27,13 @@ public class BookService {
     public boolean removeBookById(Integer bookIdToRemove) {
         return bookRepo.removeItemById(bookIdToRemove);
     }
+
+    public List<Book> getRegexBooks(String field, String regex) {
+        return bookRepo.retreive(field, regex);
+    }
+
+    public List<String> getBooksColumns() {
+        return bookRepo.getBooksColumns();
+    }
+
 }

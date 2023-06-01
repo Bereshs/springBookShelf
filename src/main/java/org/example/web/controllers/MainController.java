@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Controller
 @RequestMapping(value = "/")
 public class MainController {
@@ -21,6 +24,7 @@ public class MainController {
     public String printMainPage(Model model) {
         logger.info("Printing main page");
         model.addAttribute("mainForm", new MainController());
+        model.addAttribute("date", new Date());
         return "main_page";
     }
 

@@ -10,4 +10,8 @@ public interface ProjectRepository<T> {
     void store(T book);
 
     boolean removeItemById(Integer bookIdToRemove);
+
+    List<T> retreive(String field, String regex);
+
+    List<String> getBooksColumns();
 }
